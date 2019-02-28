@@ -1,0 +1,5 @@
+http://apps-gavinmogan-com.netlify.com/* http://apps.gavinmogan.com/:splat 301!
+/infinicatr* https://infinicatr.apps.gavinmogan.com
+/infinicatr/* https://infinicatr.apps.gavinmogan.com/:splat
+/ingrid* https://ingrid.apps.gavinmogan.com
+/ingrid/* https://ingrid.apps.gavinmogan.com/:splat
