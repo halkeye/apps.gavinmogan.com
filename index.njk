@@ -1,0 +1,57 @@
+{% macro project_view(project) %}
+  {% if project.status === 'broken' %} <span class="badge bg-danger">Broken</span> {% endif %}
+  {% if project.status === 'unmaintained' %} <span class="badge bg-dark">Unmaintained</span> {% endif %}
+  <a href="{{ project.url }}">{{ project.name }}</a> - {{ project.description }}
+  {#
+  <ul class="list-inline">
+    {%- for language in project.language -%}
+    <li class="list-inline-item"><span class="badge rounded-pill bg-primary">{{ language }}</span><?li>
+    {%- endfor -%}
+    {%- for tech in project.tech -%}
+    <li class="list-inline-item"><span class="badge rounded-pill bg-info">{{ tech }}</span><?li>
+    {%- endfor -%}
+  </ul>
+  #}
+{% endmacro %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="My Apps Page">
+    <meta name="author" content="Gavin Mogan &lt;gavin@gavinmogan.com&gt;">
+
+    <title>Apps/Projects</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head>
+
+  <body role="document">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <!-- https://getbootstrap.com/docs/5.0/components/navbar/ -->
+        <a class="navbar-brand" href="/">Apps</a>
+      </div>
+    </nav>
+
+    <section class="container-fluid" role="main">
+      <div class="mt-4 p-5 pb-2 rounded">
+        <h1>Fun</h1>
+        <h4>Sometimes I like to make apps to try out different tech, or just for my amusement.</h4>
+        <ul>
+          {%- for project in projects.fun -%}
+          <li>{{ project_view(project) }}</li>
+          {%- endfor -%}
+        </ul>
+
+        <h1>Serious</h1>
+        <ul>
+          {%- for project in projects.serious -%}
+          <li>{{ project_view(project) }}</li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </section>
+  </body>
+</html>

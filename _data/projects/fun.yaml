@@ -1,0 +1,44 @@
+- name: Infinicatr
+  description: |-
+    As at Firfox OS days, and needed to come up with an app idea to try out thier ecosytem. Infinicatr was born. I often rewrite it to try out new tech.
+  url: https://infinicatr.apps.gavinmogan.com/
+  github: https://github.com/halkeye/infinicatr
+  language:
+    - javascript
+  tech:
+    - babel
+    - rollup
+- name: Ingrid Intimidator
+  description: Playing around with some web tech to product a fun little game for Critical Hit Show
+  url: https://ingrid.apps.gavinmogan.com/
+  language:
+    - javascript
+  tech:
+    - getUserMedia
+- name: Joanna Radian Light
+  description: My friend Joanna Gaskell was a lamp one year for halloween. I wanted an excuse to play with svg masking.
+  url: https://joanna-radiant-light.apps.gavinmogan.com/
+  language:
+    - javascript
+    - svg
+    - css
+- name: Critshow Bingo
+  description: First attempt with webcomponents. Made a bingo card for critical hit show "episodes"
+  url: https://critshow-bingo.apps.gavinmogan.com
+  language:
+    - javascript
+  tech:
+    - webcomponents
+- name: Soundboard
+  description: Friend wanted to run a podcast with sound clips, I wanted an excuse to learn how to play audio on web.
+  url: https://soundboard.apps.gavinmogan.com/
+  language:
+    - javascript
+- name: Umbrellr
+  description: Originally designed by Colin at firefox dev days. I rebuilt it using angular one day.
+  url: https://umbrellr.apps.gavinmogan.com/
+  status: broken
+  language:
+    - javascript
+  tech:
+    - angularjs

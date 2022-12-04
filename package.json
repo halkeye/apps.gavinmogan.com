@@ -1,0 +1,24 @@
+{
+  "name": "apps.gavinmogan.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx @11ty/eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halkeye/apps.gavinmogan.com.git"
+  },
+  "keywords": [],
+  "author": "Gavin Mogan <npm@gavinmogan.com> (https://www.gavinmogan.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/halkeye/apps.gavinmogan.com/issues"
+  },
+  "homepage": "https://github.com/halkeye/apps.gavinmogan.com#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.2",
+    "js-yaml": "^4.1.0"
+  }
+}
