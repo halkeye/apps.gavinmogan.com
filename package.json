@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx @11ty/eleventy"
+    "build": "npx @11ty/eleventy",
+    "dev": "npx @11ty/eleventy --serve --port 8000 --watch"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,13 @@
   "homepage": "https://github.com/halkeye/apps.gavinmogan.com#readme",
   "dependencies": {
     "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy-img": "^2.0.1",
     "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "stylelint": "^14.16.0",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-recommended": "^9.0.0",
+    "stylelint-prettier": "^2.0.0"
   }
 }

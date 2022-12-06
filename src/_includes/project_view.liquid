@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="project shadow-large">
+    <div class="project-image">
+      <a href="{{ project.data.link | url}}">
+        {% toImageTag project.data.image, project.data.title, 300 %}
+      </a>
+    </div>
+    <div class="project-info">
+      <div>
+        <h2>{{ project.data.title }}</h2>
+        <div>
+        {% if project.data.status %}
+          {% if project.data.status contains 'broken'  %} <span class="badge bg-danger">Broken</span> {% endif %}
+          {% if project.data.status contains 'unmaintained'  %} <span class="badge bg-dark">Unmaintained</span> {% endif %}
+        {% endif %}
+        </div>
+      </div>
+      <div>
+        {{ project.templateContent }}
+      </div>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="{{ project.data.link | url}}" class="btn btn-primary">DEMO</a></li>
+        {% for link in project.data.links %}
+        <li class="list-inline-item"><a href="{{ link.url | url}}" class="btn btn-secondary">{{ link.type | toUpperCase }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
