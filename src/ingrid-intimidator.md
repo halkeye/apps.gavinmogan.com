@@ -1,6 +1,6 @@
 ---
 title: Ingrid Intimidator
-link: https://apps.gavinmogan.com/ingrid/
+link: https://ingrid.apps.gavinmogan.com/
 image: /assets/ingrid-intimidator.png
 category: critical hit show
 tags:
