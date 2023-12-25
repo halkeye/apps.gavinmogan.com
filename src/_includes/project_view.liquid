@@ -10,10 +10,15 @@
         <h2>{{ project.data.title }}</h2>
         <div>
         {% if project.data.status %}
-          {% if project.data.status contains 'broken'  %} <span class="badge bg-danger">Broken</span> {% endif %}
-          {% if project.data.status contains 'unmaintained'  %} <span class="badge bg-dark">Unmaintained</span> {% endif %}
+          {% if project.data.status contains 'broken' %} <span class="badge bg-danger">Broken</span> {% endif %}
+          {% if project.data.status contains 'unmaintained' %} <span class="badge bg-dark">Unmaintained</span> {% endif %}
         {% endif %}
         </div>
+        {% if project.data.year %}
+        <div>
+        Creation year: {% project.data.year %}
+        </div>
+        {% endif %}
       </div>
       <div>
         {{ project.templateContent }}
