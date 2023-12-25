@@ -1,4 +1,5 @@
 ---
+layout: "project.njk"
 title: "Flask Atlassian Connect"
 link: "https://halkeye.github.io/flask_atlassian_connect/"
 status:

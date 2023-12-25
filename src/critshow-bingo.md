@@ -1,4 +1,5 @@
 ---
+layout: "project.njk"
 title: "Critical Hit Show - Bingo"
 link: "https://critshow-bingo.apps.gavinmogan.com"
 links:

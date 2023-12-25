@@ -1,4 +1,5 @@
 ---
+layout: "project.njk"
 title: "Salty Stories - Web"
 image: /assets/saltystories.png
 link: "https://books.saltystories.ca/"

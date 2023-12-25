@@ -1,4 +1,5 @@
 ---
+layout: "project.njk"
 title: "Infinicatr"
 image: /assets/infinicatr.png
 link: "https://infinicatr.apps.gavinmogan.com/"

@@ -1,5 +1,6 @@
 const yaml = require("js-yaml");
 const Image = require("@11ty/eleventy-img");
+const { EleventyRenderPlugin } = require("@11ty/eleventy");
 
 const TAGS = ['fun', 'serious', 'legacy', 'jenkins', 'muds'];
 
@@ -33,6 +34,8 @@ const toImageTag = async (src = 'src/img/noimage.jpg', alt = "", width = 300) =>
 };
 
 module.exports = eleventyConfig => {
+  eleventyConfig.addPlugin(EleventyRenderPlugin);
+
   eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
 
   eleventyConfig.addPassthroughCopy("src/img/*.png");

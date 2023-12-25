@@ -1,5 +1,5 @@
 ---
-layout: "project.njk"
+layout: "src/project.liquid"
 title: "Yet Another Online Interaction Role Playing Game"
 image: /assets/yaoirpg.gif
 link: https://yaoirpg.apps.gavinmogan.com/

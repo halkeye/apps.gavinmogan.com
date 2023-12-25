@@ -1,4 +1,5 @@
 ---
+layout: "project.njk"
 title: "MTLJPost"
 link: https://github.com/halkeye/MTLJPost
 image: /assets/kodekoan.jpg

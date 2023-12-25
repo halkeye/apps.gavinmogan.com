@@ -1,4 +1,5 @@
 ---
+layout: "project.njk"
 title: Radiant Joanna
 tags:
   - fun

@@ -1,4 +1,5 @@
 ---
+layout: "project.njk"
 title: Jenkins.io - Stories Site
 tags:
   - jenkins

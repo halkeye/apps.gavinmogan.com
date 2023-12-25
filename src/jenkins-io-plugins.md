@@ -1,4 +1,5 @@
 ---
+layout: "project.njk"
 title: Jenkins.io - Plugin Site
 tags:
   - jenkins

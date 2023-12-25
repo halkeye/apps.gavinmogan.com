@@ -1,4 +1,5 @@
 ---
+layout: "project.njk"
 title: Soundboard
 date: 2019-11-19T00:12:06.799Z
 image: /assets/soundboard.png

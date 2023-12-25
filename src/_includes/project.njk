@@ -1,0 +1,17 @@
+---
+layout: "default.liquid"
+---
+{% renderFile './src/_includes/project_view.liquid', {
+  project: {
+    fileSlug: fileSlug,
+    templateContent: content,
+    data: {
+      title: title,
+      image: image,
+      status: status,
+      year: year,
+      link: link,
+      links: links
+    }
+  }
+} %}

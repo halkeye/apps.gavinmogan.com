@@ -1,4 +1,5 @@
 ---
+layout: "project.njk"
 title: "Dark Warriors"
 link: https://github.com/halkeye/darkwarriors/releases/tag/dw-0.0.1361
 image: /assets/kodekoan.jpg

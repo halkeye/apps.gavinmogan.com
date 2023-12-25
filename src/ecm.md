@@ -1,4 +1,5 @@
 ---
+layout: "project.njk"
 title: "Electronic Convention Management"
 link: https://ecm.apps.gavinmogan.com/
 category: Legacy / KodeKoan Projects

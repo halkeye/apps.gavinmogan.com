@@ -1,4 +1,5 @@
 ---
+layout: "project.njk"
 title: Umbrellr
 link: "https://umbrellr.apps.gavinmogan.com/"
 tags:

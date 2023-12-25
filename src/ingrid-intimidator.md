@@ -1,4 +1,5 @@
 ---
+layout: "project.njk"
 title: Ingrid Intimidator
 link: https://ingrid.apps.gavinmogan.com/
 image: /assets/ingrid-intimidator.png

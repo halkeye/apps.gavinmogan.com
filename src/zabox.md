@@ -1,4 +1,5 @@
 ---
+layout: "project.njk"
 title: "Zabox"
 image: /assets/zabox.png
 link: https://zabox.gavinmogan.com/
