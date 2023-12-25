@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx @11ty/eleventy",
-    "dev": "npx @11ty/eleventy --serve --port 8000 --watch"
+    "build": "npx eleventy",
+    "dev": "npx eleventy --serve --port 8000 --watch"
   },
   "repository": {
     "type": "git",
