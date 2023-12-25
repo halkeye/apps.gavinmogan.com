@@ -1,5 +1,4 @@
 ---
-layout: "project.njk"
 title: "NPM Modules"
 link: https://www.npmjs.com/~halkeye
 ---

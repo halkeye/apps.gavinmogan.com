@@ -1,5 +1,4 @@
 ---
-layout: "project.njk"
 title: "Unknown Regions"
 link: https://github.com/halkeye/unknown_regions/releases/tag/ur-1.0.12
 image: /assets/kodekoan.jpg

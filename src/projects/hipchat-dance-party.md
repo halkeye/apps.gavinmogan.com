@@ -1,5 +1,4 @@
 ---
-layout: "project.njk"
 title: "Hipchat Dance Party"
 link: https://devpost.com/software/hipchat-dance-party-service
 category: Sauce Labs

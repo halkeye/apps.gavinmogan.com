@@ -39,6 +39,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
 
   eleventyConfig.addPassthroughCopy("src/img/*.png");
+  eleventyConfig.addPassthroughCopy("src/img/*.gif");
   eleventyConfig.addPassthroughCopy('css')
 
   eleventyConfig.addAsyncShortcode('toImageTag', toImageTag)

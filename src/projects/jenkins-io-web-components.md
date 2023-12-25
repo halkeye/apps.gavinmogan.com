@@ -1,5 +1,4 @@
 ---
-layout: "project.njk"
 title: Jenkins.io - Web Components
 tags:
   - jenkins
