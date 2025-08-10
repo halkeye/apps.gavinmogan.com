@@ -21,11 +21,11 @@
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-img": "^4.0.0",
-    "js-yaml": "^4.1.0"
+    "js-yaml": "4.1.0"
   },
   "devDependencies": {
-    "stylelint": "^16.2.1",
-    "stylelint-config-recommended": "^14.0.0",
-    "stylelint-prettier": "^5.0.0"
+    "stylelint": "16.2.1",
+    "stylelint-config-recommended": "14.0.0",
+    "stylelint-prettier": "5.0.0"
   }
 }
