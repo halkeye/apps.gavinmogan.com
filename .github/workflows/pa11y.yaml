@@ -1,29 +1,26 @@
 ---
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "Lychee"
+name: pa11y tests
 
 on:
   workflow_dispatch:
   push:
     branches: [ "master", "main" ]
-    paths: [".github/workflows/lychee.yaml"]
-  schedule:
-    - cron: "0 0 * * *"
 
 permissions:
   issues: write
 
 env:
-  LYCHEE_OUTPUT: lychee/out.md
-  WORKFLOW_ISSUE_TITLE: "Link Checker Dashboard 🔗"
+  WORKFLOW_ISSUE_TITLE: "Pa11y Checker Dashboard 🔗"
 
 jobs:
-  lychee:
-    name: Lychee
+  build:
+    name: Building site and running pa11y-ci tests
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout source.
+        uses: actions/checkout@v2
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -37,14 +34,12 @@ jobs:
       - name: build
         run: npm run build
 
-      - name: Scan for broken links
-        uses: lycheeverse/lychee-action@v1
-        id: lychee
-        with:
-          token: "${{ secrets.GITHUB_TOKEN }}"
-          args: --no-progress --base _site --exclude https://fonts.gstatic.com/ --exclude https://fonts.googleapis.com/ '_site'
-          output: "${{ env.LYCHEE_OUTPUT }}"
-          debug: true
+      - name: serve
+        run: npx serve -l 3000 _site &
+
+      - name: Run pa11y-ci.
+        continue-on-error: true
+        run: npx pa11y-ci --sitemap http://localhost:3000/sitemap.xml -f https://presentations.gavinmogan.com -r http://localhost:3000 2>&1 | tee pa11y_output.txt
 
       - name: Find Link Checker Issue
         id: find-issue
@@ -68,4 +63,4 @@ jobs:
           token: "${{ secrets.GITHUB_TOKEN }}"
           title: "${{ env.WORKFLOW_ISSUE_TITLE }}"
           issue-number: "${{ steps.find-issue.outputs.issue-number || '' }}"
-          content-filepath: "${{ env.LYCHEE_OUTPUT }}"
+          content-filepath: ./pa11y_output.txt
