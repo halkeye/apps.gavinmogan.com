@@ -1,67 +1,89 @@
 const yaml = require("js-yaml");
 const Image = require("@11ty/eleventy-img");
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
+const editOnGithub = require("eleventy-plugin-edit-on-github");
 
-const TAGS = ['fun', 'serious', 'legacy', 'jenkins', 'muds'];
+const TAGS = ["fun", "serious", "legacy", "jenkins", "muds"];
 
-const toImageTag = async (src = 'src/img/noimage.jpg', alt = "", width = 300) => {
+const toImageTag = async (
+  src = "src/img/noimage.jpg",
+  alt = "",
+  width = 300,
+) => {
   if (!src) {
     src = "src/img/noimage.jpg";
   }
 
   let attributes = {
-    src: src.replace('/assets/', 'src/img/'),
+    src: src.replace("/assets/", "src/img/"),
     widths: [width],
     alt: alt || "",
-  }
+  };
   const imageOptions = {
     // We only need the original width and format
     widths: attributes.widths,
-    formats: ['avif', 'jpeg'],
+    formats: ["avif", "jpeg"],
     // Where the generated image files get saved
-    outputDir: '_site/assets/images',
+    outputDir: "_site/assets/images",
     // Public URL path that's referenced in the img tag's src attribute
-    urlPath: '/assets/images',
+    urlPath: "/assets/images",
   };
   // generate images, while this is async we don’t wait
   let metadata = await Image(attributes.src, imageOptions);
   return Image.generateHTML(metadata, {
-    sizes: '100vw',
-    loading: 'lazy',
-    decoding: 'async',
+    sizes: "100vw",
+    loading: "lazy",
+    decoding: "async",
     ...attributes,
   });
 };
 
-module.exports = eleventyConfig => {
+module.exports = (eleventyConfig) => {
   eleventyConfig.addPlugin(EleventyRenderPlugin);
+  eleventyConfig.addPlugin(editOnGithub, {
+    // required
+    github_edit_repo: "https://github.com/halkeye/apps.gavinmogan.com",
+    // optional: defaults
+    github_edit_path: undefined, // non-root location in git url. root is assumed
+    github_edit_branch: "master",
+    github_edit_text: `<i class="bi bi-github"></i>`, // html accepted, or javascript function: (page) => { return page.inputPath}
+    github_edit_class: "edit-on-github btn btn-secondary",
+    github_edit_tag: "a",
+    github_edit_attributes:
+      'target="_blank" rel="noopener" title="Edit on Github"',
+    github_edit_wrapper: undefined, //ex: "<div stuff>${edit_on_github}</div>"
+  });
 
-  eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
+  eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
 
   eleventyConfig.addPassthroughCopy("src/img/*.png");
   eleventyConfig.addPassthroughCopy("src/img/*.gif");
-  eleventyConfig.addPassthroughCopy('css')
+  eleventyConfig.addPassthroughCopy("css");
 
-  eleventyConfig.addAsyncShortcode('toImageTag', toImageTag)
+  eleventyConfig.addAsyncShortcode("toImageTag", toImageTag);
 
-  eleventyConfig.addFilter("toUpperCase", value => value.toUpperCase())
+  eleventyConfig.addFilter("toUpperCase", (value) => value.toUpperCase());
 
   eleventyConfig.addShortcode("twitter", function (username) {
     return `<a href="https://www.twitter.com/${username}">${username}</a>`;
   });
 
-  TAGS.forEach(tag => {
-    eleventyConfig.addCollection(tag + 'Projects', function (collectionApi) {
-      return collectionApi.getAll().filter(item => item?.data?.tags?.includes(tag));
-    })
-  })
-  eleventyConfig.addCollection('remainingProjects', function (collectionApi) {
-    return collectionApi.getAll().filter(item => !TAGS.some(tag => item?.data?.tags?.includes(tag)));
-  })
+  TAGS.forEach((tag) => {
+    eleventyConfig.addCollection(tag + "Projects", function (collectionApi) {
+      return collectionApi
+        .getAll()
+        .filter((item) => item?.data?.tags?.includes(tag));
+    });
+  });
+  eleventyConfig.addCollection("remainingProjects", function (collectionApi) {
+    return collectionApi
+      .getAll()
+      .filter((item) => !TAGS.some((tag) => item?.data?.tags?.includes(tag)));
+  });
 
   return {
     dir: {
       input: "src",
-    }
-  }
+    },
+  };
 };
