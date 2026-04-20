@@ -22,7 +22,9 @@
         {{ project.templateContent }}
       </div>
       <ul class="list-inline">
+        {% if project.data.link %}
         <li class="list-inline-item"><a href="{{ project.data.link | url}}" class="btn btn-primary">DEMO</a></li>
+        {% endif %}
         {% for link in project.data.links %}
         <li class="list-inline-item"><a href="{{ link.url | url}}" class="btn btn-secondary">{{ link.type | toUpperCase }}</a></li>
         {% endfor %}

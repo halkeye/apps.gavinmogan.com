@@ -1,6 +1,6 @@
 ---
 title: "Electronic Convention Management"
-link: https://ecm.apps.gavinmogan.com/
+# link: https://ecm.apps.gavinmogan.com/
 category: Legacy / KodeKoan Projects
 tags:
   - kodekoan
@@ -12,7 +12,7 @@ status:
   - unmaintained
   - broken
 ---
-A project I worked on with [Stephen Tiu](http://stephentiu.uchikoma.org/) for some of the conventions we volunteered at.
+A project I worked on with [Stephen Tiu](https://www.linkedin.com/in/stephentiu/) for some of the conventions we volunteered at.
 We created it as an attempt to be a self manage ticketing system that could be setup once, then reused from year to year.
 
 Some features include:
@@ -21,4 +21,4 @@ Some features include:
 *   History of past tickets
 *   QR Code generation
 
-Sadly a bunch of the dependancies are no longer available, this was before the days of composephp, so its pretty broken
+Sadly a bunch of the dependencies are no longer available, this was before the days of composephp, so its pretty broken
