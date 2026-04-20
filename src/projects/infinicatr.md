@@ -6,7 +6,7 @@ links:
   - type: github
     url: "https://github.com/halkeye/infinicatr"
   - type: chrome
-    url: "https://chrome.google.com/webstore/detail/infinicatr/dikkcbebmfnedmojoipnoonmionakoka"
+    url: "https://chromewebstore.google.com/detail/infinicatr/dikkcbebmfnedmojoipnoonmionakoka"
 language:
   - javascript
 tech:
