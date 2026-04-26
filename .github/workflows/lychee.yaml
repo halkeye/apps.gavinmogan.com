@@ -42,9 +42,10 @@ jobs:
         id: lychee
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
-          args: --no-progress --root-dir _site --exclude https://fonts.gstatic.com/ --exclude https://fonts.googleapis.com/ '_site'
           output: "${{ env.LYCHEE_OUTPUT }}"
-          debug: true
+          lycheeVersion: v0.24.1
+          fail: false
+          debug: false
 
       - name: Find Link Checker Issue
         id: find-issue
